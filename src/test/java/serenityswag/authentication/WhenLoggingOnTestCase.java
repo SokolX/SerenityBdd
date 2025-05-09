@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static serenityswag.authentication.UserEnum.STANDARD_USER;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WhenLoggingOnIT {
+public class WhenLoggingOnTestCase {
 
     @Steps
     LoginActions login;
@@ -23,6 +23,7 @@ public class WhenLoggingOnIT {
         login.as(STANDARD_USER);
 
         Serenity.reportThat("The inventory page should be displayed with the correct title",
-                () -> assertThat(inventoryPage.getHeading()).isEqualToIgnoringCase("Products"));
+                () -> assertThat(inventoryPage.getHeading()).isEqualToIgnoringCase("Products")
+        );
     }
 }
